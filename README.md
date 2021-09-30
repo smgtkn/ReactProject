@@ -8,6 +8,7 @@ INSTALLATION
 		docker run --name nameofyourchoice -d -p 3000:3000 nameofyourapp:latest
 	4- open localhost:3000 on browser
 USAGE
+
 	 1 camera and at least 1 algorithm can be selected.
 	 
 	 Algortihm parameters can be set using settings button on algorithms list items.
