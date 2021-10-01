@@ -19,6 +19,6 @@ USAGE
 	 {cam: '0', algorithms:{id: 0 parameters: ['default', 2, false, 'default']} }
          will be logged on console. 
 	 
-	 When parameters is not selected for an algorithm, default values are used.
+	 When parameters are not selected for an algorithm, default values are used.
 	 
 	
