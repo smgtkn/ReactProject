@@ -122,7 +122,7 @@ class ScrollAlgorithm extends Component {
                   
                     {this.state.isDescriptionOpen&& this.state.chosenAlgorithmForDescription!=-1 ? <DetailsModal closeFromModal={this.handleCloseDescription} algo={this.state.chosenAlgorithmForDescription } />:"" }
                      
-                    {this.state.isParametersOpen ?< ParametersModal closeFromModal={this.handleCloseParameters} onParameterSubmit={this.handleParameterSubmit} 
+                    {this.state.isParametersOpen ?< ParametersModal chosenAlgorithms={this.state.chosenAlgorithms} closeFromModal={this.handleCloseParameters} onParameterSubmit={this.handleParameterSubmit} 
                     algorithmID={this.state.chosenAlgorithmForParameters}/> :"" }
                   
                 

@@ -2,9 +2,23 @@ import React, {Component} from "react";
 
 import "./App.css"
 class ParametersModal extends Component {
-    constructor (){
-        super();
-        this.state={value1:"default",value2:2 , value3 :true,value4:"default"};
+    constructor (props){
+        super(props);
+        let val1="default";
+        let val2=2;
+        let val3=true;
+        let val4="default";
+        for(let i=0;i<this.props.chosenAlgorithms.length;i++){
+            if(i==this.props.algorithmID){
+                    val1=this.props.chosenAlgorithms[i].parameters[0];
+                    val2=this.props.chosenAlgorithms[i].parameters[1];
+                    val3=this.props.chosenAlgorithms[i].parameters[2];
+                    val4=this.props.chosenAlgorithms[i].parameters[3];
+                    break;
+            }
+
+        }
+        this.state={value1:val1,value2:val2 , value3 :val3,value4:val4};
        
     }
     handleSubmit=(e)=>{
