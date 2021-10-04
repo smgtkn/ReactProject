@@ -8,16 +8,20 @@ class ParametersModal extends Component {
         let val2=2;
         let val3=true;
         let val4="default";
+        
         for(let i=0;i<this.props.chosenAlgorithms.length;i++){
-            if(i==this.props.algorithmID){
+            if(this.props.chosenAlgorithms[i].id==this.props.algorithmID){
+                    
                     val1=this.props.chosenAlgorithms[i].parameters[0];
                     val2=this.props.chosenAlgorithms[i].parameters[1];
                     val3=this.props.chosenAlgorithms[i].parameters[2];
                     val4=this.props.chosenAlgorithms[i].parameters[3];
+                    
                     break;
             }
 
         }
+         
         this.state={value1:val1,value2:val2 , value3 :val3,value4:val4};
        
     }
@@ -27,26 +31,36 @@ class ParametersModal extends Component {
         e.preventDefault();
     }
     handleParameterChange=(i,e)=>{
+       
         switch(i){
             case 1 :
-              
-                const val1=e.target.value;                
-                this.setState({value1:val1})
+                
+                const val1=e.target.value;  
+                this.setState({value1:val1});
+               
+               
+                
                 break;
             case 2:
-               
                 const val2=e.target.value;
+                   
+                
                 this.setState({value2:val2})
+               
                 break;
             case 3:
                
-                const val3=e.target.checked;              
-                this.setState({value3:val3})
+                const val3=e.target.checked;     
+                         
+                this.setState({value3:val3});
+               
                 break;
             case 4:
                 
-                const val4=e.target.value;              
+                const val4=e.target.value;  
+                         
                 this.setState({value4:val4})
+                
                 break;
             default: 
         }
@@ -55,7 +69,7 @@ class ParametersModal extends Component {
 
     }
 
-    render( ) {
+    render( props) {
         
         
         return (
@@ -97,7 +111,8 @@ class ParametersModal extends Component {
                 </div>
                 <div>
                 <label >Parameter 4:</label>
-                <input className="parametersModalInputs" type="text" id="param4" onChange={(e)=>this.handleParameterChange(4,e)}  value={this.state.value4}/>
+                <input className="parametersModalInputs" type="text" id="param4" onChange={(e)=>this.handleParameterChange(4,e)}  
+                value={this.state.value4}/>
                 </div>
                 <input className="Submit" style= {{marginLeft:"70%" ,marginTop:"10px", color:"white"}}  type="submit"></input>
                 

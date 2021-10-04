@@ -34,6 +34,7 @@ class ScrollAlgorithm extends Component {
 
     }
     handleParameterSubmit=(value1,value2,value3,value4)=>{
+      
         let temp=[...this.state.chosenAlgorithms];  
          let flag=0;
          for(let i =0;i<temp.length;i++){
@@ -46,7 +47,7 @@ class ScrollAlgorithm extends Component {
          }
          if(flag==0){
              alert(`Algorithm ${parseInt(this.state.chosenAlgorithmForParameters,10)+1} is not selected!`);
-             this.setState({chosenAlgorithms:temp});
+           
              
          }   
          else{  
@@ -123,7 +124,7 @@ class ScrollAlgorithm extends Component {
                     {this.state.isDescriptionOpen&& this.state.chosenAlgorithmForDescription!=-1 ? <DetailsModal closeFromModal={this.handleCloseDescription} algo={this.state.chosenAlgorithmForDescription } />:"" }
                      
                     {this.state.isParametersOpen ?< ParametersModal chosenAlgorithms={this.state.chosenAlgorithms} closeFromModal={this.handleCloseParameters} onParameterSubmit={this.handleParameterSubmit} 
-                    algorithmID={this.state.chosenAlgorithmForParameters}/> :"" }
+                    algorithmID={parseInt(this.state.chosenAlgorithmForParameters)}/> :"" }
                   
                 
              </div>
